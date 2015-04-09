@@ -1,3 +1,8 @@
+## About
+[![Build Status](https://travis-ci.org/martinlindhe/php-mb-helpers.png?branch=master)](https://travis-ci.org/martinlindhe/php-mb-helpers)
+
+Provides some missing (?) multibyte functions.
+
 ## Installation
 With Composer
 
