@@ -21,7 +21,7 @@ if (!function_exists('mb_ucfirst')) {
     function mb_ucfirst($s, $encoding = 'UTF-8')
     {
         $firstLetter = mb_substr($s, 0, 1, $encoding);
-        $rest = mb_substr($s, 1, mb_strlen($s));
+        $rest = mb_substr($s, 1, mb_strlen($s, $encoding), $encoding);
 
         return mb_strtoupper($firstLetter, $encoding) . $rest;
     }
