@@ -19,4 +19,10 @@ class HelpersTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('öäå', mb_strrev('åäö'));
         $this->assertEquals('öäÅ', mb_strrev('Åäö'));
     }
+
+    function test_mb_str_pad()
+    {
+        $this->assertEquals('a   ', mb_str_pad('a', 4));
+        $this->assertEquals('ö   ', mb_str_pad('ö', 4));
+    }
 }
