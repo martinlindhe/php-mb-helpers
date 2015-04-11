@@ -2,26 +2,26 @@
 
 if (!function_exists('mb_ucwords')) {
     /**
-     * @param string $s
+     * @param string $str
      * @param string $encoding
      * @return string Uc Words
      */
-    function mb_ucwords($s, $encoding = 'UTF-8')
+    function mb_ucwords($str, $encoding = 'UTF-8')
     {
-        return mb_convert_case($s, MB_CASE_TITLE, $encoding);
+        return mb_convert_case($str, MB_CASE_TITLE, $encoding);
     }
 }
 
 if (!function_exists('mb_ucfirst')) {
     /**
-     * @param string $s
+     * @param string $str
      * @param string $encoding
      * @return string Uc first
      */
-    function mb_ucfirst($s, $encoding = 'UTF-8')
+    function mb_ucfirst($str, $encoding = 'UTF-8')
     {
-        $firstLetter = mb_substr($s, 0, 1, $encoding);
-        $rest = mb_substr($s, 1, mb_strlen($s, $encoding), $encoding);
+        $firstLetter = mb_substr($str, 0, 1, $encoding);
+        $rest = mb_substr($str, 1, mb_strlen($str, $encoding), $encoding);
 
         return mb_strtoupper($firstLetter, $encoding) . $rest;
     }
