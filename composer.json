@@ -1,5 +1,7 @@
 {
   "name": "martinlindhe/php-mb-helpers",
+  "description": "Provides mb_ucwords(), mb_ucfirst(), mb_strrev(), mb_str_pad()",
+  "homepage": "https://github.com/martinlindhe/php-mb-helpers",
   "license": "MIT",
   "authors": [
     {
