@@ -32,3 +32,11 @@ coding_style:
                 general: undefined
             constants:
                 true_false_null: undefined
+build:
+    tests:
+        override:
+            -
+                command: 'phpunit --coverage-clover=coverage.tmp'
+                coverage:
+                    file: 'coverage.tmp'
+                    format: 'php-clover'
