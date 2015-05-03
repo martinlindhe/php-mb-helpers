@@ -24,4 +24,4 @@ or add manually to composer.json:
 
 ## Usage
 
-mb_ucwords(), mb_ucfirst(), mb_strrev(), mb_str_pad() like their counterparts.
+mb_ucwords(), mb_ucfirst(), mb_strrev(), mb_str_pad(), mb_count_chars() like their counterparts.
