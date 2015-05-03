@@ -90,6 +90,6 @@ if (!function_exists('mb_count_chars')) {
             return $res;
         }
 
-        throw new \Exception('unsupported mode '.$mode);
+        throw new \Exception('unsupported mode ' . $mode);
     }
 }
