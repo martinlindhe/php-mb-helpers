@@ -1,0 +1,34 @@
+filter:
+    excluded_paths:
+        - 'tests/*'
+checks:
+    php:
+        code_rating: true
+        duplication: true
+coding_style:
+    php:
+        spaces:
+            general:
+                linefeed_character: newline
+        braces:
+            classes_functions:
+                class: undefined
+                function: undefined
+                closure: undefined
+            if:
+                opening: undefined
+            for:
+                opening: undefined
+            while:
+                opening: undefined
+            do_while:
+                opening: undefined
+            switch:
+                opening: undefined
+            try:
+                opening: undefined
+        upper_lower_casing:
+            keywords:
+                general: undefined
+            constants:
+                true_false_null: undefined
