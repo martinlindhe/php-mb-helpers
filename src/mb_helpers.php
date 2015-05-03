@@ -63,7 +63,7 @@ if (!function_exists('mb_count_chars')) {
      * @param string $string
      * @param int $mode only mode 1 and 3 is available
      * @param string $encoding
-     * @return array
+     * @return array|string
      * @throws \Exception
      */
     function mb_count_chars($string, $mode, $encoding = 'UTF-8')

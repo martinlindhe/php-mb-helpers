@@ -31,4 +31,12 @@ class HelpersTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(array('ö' => 1, 'b' => 2), mb_count_chars('böb', 1));
         $this->assertEquals('bö', mb_count_chars('böb', 3));
     }
+
+    /**
+     * @@expectedException Exception
+     */
+    function test_mb_count_chars_exception()
+    {
+        mb_count_chars('böb', 2);
+    }
 }
