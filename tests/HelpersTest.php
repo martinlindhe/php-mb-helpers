@@ -25,4 +25,10 @@ class HelpersTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('a   ', mb_str_pad('a', 4));
         $this->assertEquals('ö   ', mb_str_pad('ö', 4));
     }
+
+    function test_mb_count_chars()
+    {
+        $this->assertEquals(['ö' => 1, 'b' => 2], mb_count_chars('böb', 1));
+        $this->assertEquals('bö', mb_count_chars('böb', 3));
+    }
 }

@@ -57,3 +57,39 @@ if (!function_exists('mb_str_pad')) {
         return str_pad($input, $pad_length + $diff, $pad_string, $pad_type);
     }
 }
+
+if (!function_exists('mb_count_chars')) {
+    /**
+     * @param string $string
+     * @param int $mode only mode 1 and 3 is available
+     * @param string $encoding
+     * @return array
+     * @throws \Exception
+     */
+    function mb_count_chars($string, $mode, $encoding = 'UTF-8')
+    {
+        $l = mb_strlen($string, $encoding);
+        $unique = array();
+        for ($i = 0; $i < $l; $i++) {
+            $char = mb_substr($string, $i, 1, $encoding);
+            if (!array_key_exists($char, $unique)) {
+                $unique[$char] = 0;
+            }
+            $unique[$char]++;
+        }
+
+        if ($mode == 1) {
+            return $unique;
+        }
+
+        if ($mode == 3) {
+            $res = '';
+            foreach ($unique as $index => $count) {
+                $res .= $index;
+            }
+            return $res;
+        }
+
+        throw new \Exception('unsupported mode '.$mode);
+    }
+}
