@@ -11,8 +11,8 @@ class HelpersTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('H.G. Wells', ucwords('H.G. Wells'));
         $this->assertEquals('H.g. Wells', ucwords('h.g. wells'));
 
-//        $this->assertEquals('H.G. Wells', mb_ucwords('H.G. Wells'));
-//        $this->assertEquals('H.g. Wells', mb_ucwords('h.g. wells'));
+        $this->assertEquals('H.G. Wells', mb_ucwords('H.G. Wells'));
+        $this->assertEquals('H.g. Wells', mb_ucwords('h.g. wells'));
     }
 
     function test_mb_ucfirst()

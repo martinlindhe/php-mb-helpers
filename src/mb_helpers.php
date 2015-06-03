@@ -8,7 +8,25 @@ if (!function_exists('mb_ucwords')) {
      */
     function mb_ucwords($str, $encoding = 'UTF-8')
     {
-        return mb_convert_case($str, MB_CASE_TITLE, $encoding);
+        $upper = true;
+
+        $res = '';
+
+        for ($i = 0; $i < mb_strlen($str, $encoding); $i++) {
+            $c = mb_substr($str, $i, 1, $encoding);
+
+            if ($upper) {
+                $c = mb_convert_case($c, MB_CASE_UPPER, $encoding);
+                $upper = false;
+            }
+
+            if ($c == ' ') {
+                $upper = true;
+            }
+
+            $res .= $c;
+        }
+        return $res;
     }
 }
 
