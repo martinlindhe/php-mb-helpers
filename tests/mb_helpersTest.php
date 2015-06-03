@@ -10,9 +10,11 @@ class HelpersTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('H.G. Wells', ucwords('H.G. Wells'));
         $this->assertEquals('H.g. Wells', ucwords('h.g. wells'));
+        $this->assertEquals('H.G. WELLS', ucwords('H.G. WELLS'));
 
         $this->assertEquals('H.G. Wells', mb_ucwords('H.G. Wells'));
         $this->assertEquals('H.g. Wells', mb_ucwords('h.g. wells'));
+        $this->assertEquals('H.G. WELLS', mb_ucwords('H.G. WELLS'));
     }
 
     function test_mb_ucfirst()
@@ -22,9 +24,11 @@ class HelpersTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals('H.G. Wells', ucfirst('H.G. Wells'));
         $this->assertEquals('H.g. wells', ucfirst('h.g. wells'));
+        $this->assertEquals('H.G. WELLS', ucfirst('H.G. WELLS'));
 
         $this->assertEquals('H.G. Wells', mb_ucfirst('H.G. Wells'));
         $this->assertEquals('H.g. wells', mb_ucfirst('h.g. wells'));
+        $this->assertEquals('H.G. WELLS', mb_ucfirst('H.G. WELLS'));
     }
 
     function test_mb_strrev()
