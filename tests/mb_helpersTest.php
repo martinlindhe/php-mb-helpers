@@ -6,12 +6,25 @@ class HelpersTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals('Åäö', mb_ucwords('åäö'));
         $this->assertEquals('Åäö Öäå', mb_ucwords('åäö öäå'));
+
+
+        $this->assertEquals('H.G. Wells', ucwords('H.G. Wells'));
+        $this->assertEquals('H.g. Wells', ucwords('h.g. wells'));
+
+//        $this->assertEquals('H.G. Wells', mb_ucwords('H.G. Wells'));
+//        $this->assertEquals('H.g. Wells', mb_ucwords('h.g. wells'));
     }
 
     function test_mb_ucfirst()
     {
         $this->assertEquals('Åäö', mb_ucfirst('åäö'));
         $this->assertEquals('Åäö öäå', mb_ucfirst('åäö öäå'));
+
+        $this->assertEquals('H.G. Wells', ucfirst('H.G. Wells'));
+        $this->assertEquals('H.g. wells', ucfirst('h.g. wells'));
+
+        $this->assertEquals('H.G. Wells', mb_ucfirst('H.G. Wells'));
+        $this->assertEquals('H.g. wells', mb_ucfirst('h.g. wells'));
     }
 
     function test_mb_strrev()
@@ -35,7 +48,7 @@ class HelpersTest extends PHPUnit_Framework_TestCase
     /**
      * @@expectedException Exception
      */
-    function test_mb_count_chars_exception()
+    function test_mb_count_chars_unsupported_mode()
     {
         mb_count_chars('böb', 2);
     }
