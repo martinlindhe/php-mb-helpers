@@ -1,6 +1,5 @@
 ## About
 [![Build Status](https://travis-ci.org/martinlindhe/php-mb-helpers.png?branch=master)](https://travis-ci.org/martinlindhe/php-mb-helpers)
-[![Code Quality](https://scrutinizer-ci.com/g/martinlindhe/php-mb-helpers/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/martinlindhe/php-mb-helpers)
 [![Code Coverage](https://scrutinizer-ci.com/g/martinlindhe/php-mb-helpers/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/martinlindhe/php-mb-helpers)
 
 Provides some missing (?) multibyte functions.
