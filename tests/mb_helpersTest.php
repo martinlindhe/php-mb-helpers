@@ -50,7 +50,7 @@ class HelpersTest extends PHPUnit_Framework_TestCase
     }
 
     /**
-     * @@expectedException Exception
+     * @expectedException Exception
      */
     function test_mb_count_chars_unsupported_mode()
     {
