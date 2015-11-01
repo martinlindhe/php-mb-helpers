@@ -111,3 +111,28 @@ if (!function_exists('mb_count_chars')) {
         throw new \Exception('unsupported mode ' . $mode);
     }
 }
+
+if (!function_exists('mb_str_split')) {
+    /**
+     * @param string $string
+     * @param int $split_length
+     * @param string $encoding
+     * @return array
+     */
+    function mb_str_split($string, $split_length = 1, $encoding = 'UTF-8')
+    {
+        if ($split_length > 0) {
+            $ret = array();
+            $len = mb_strlen($string, $encoding);
+            for ($i = 0; $i < $len; $i += $split_length) {
+                $ret[] = mb_substr($string, $i, $split_length, $encoding);
+            }
+            if (!$ret) {
+                // behave like str_split() on empty input
+                return [""];
+            }
+            return $ret;
+        }
+        return preg_split("//u", $string, -1, PREG_SPLIT_NO_EMPTY);
+    }
+}

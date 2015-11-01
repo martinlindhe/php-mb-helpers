@@ -7,14 +7,9 @@ class HelpersTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('Åäö', mb_ucwords('åäö'));
         $this->assertEquals('Åäö Öäå', mb_ucwords('åäö öäå'));
 
-
-        $this->assertEquals('H.G. Wells', ucwords('H.G. Wells'));
-        $this->assertEquals('H.g. Wells', ucwords('h.g. wells'));
-        $this->assertEquals('H.G. WELLS', ucwords('H.G. WELLS'));
-
-        $this->assertEquals('H.G. Wells', mb_ucwords('H.G. Wells'));
-        $this->assertEquals('H.g. Wells', mb_ucwords('h.g. wells'));
-        $this->assertEquals('H.G. WELLS', mb_ucwords('H.G. WELLS'));
+        $this->assertEquals(ucwords('H.G. Wells'), mb_ucwords('H.G. Wells'));
+        $this->assertEquals(ucwords('h.g. wells'), mb_ucwords('h.g. wells'));
+        $this->assertEquals(ucwords('H.G. WELLS'), mb_ucwords('H.G. WELLS'));
     }
 
     function test_mb_ucfirst()
@@ -22,31 +17,32 @@ class HelpersTest extends PHPUnit_Framework_TestCase
         $this->assertEquals('Åäö', mb_ucfirst('åäö'));
         $this->assertEquals('Åäö öäå', mb_ucfirst('åäö öäå'));
 
-        $this->assertEquals('H.G. Wells', ucfirst('H.G. Wells'));
-        $this->assertEquals('H.g. wells', ucfirst('h.g. wells'));
-        $this->assertEquals('H.G. WELLS', ucfirst('H.G. WELLS'));
-
-        $this->assertEquals('H.G. Wells', mb_ucfirst('H.G. Wells'));
-        $this->assertEquals('H.g. wells', mb_ucfirst('h.g. wells'));
-        $this->assertEquals('H.G. WELLS', mb_ucfirst('H.G. WELLS'));
+        $this->assertEquals(ucfirst('H.G. Wells'), mb_ucfirst('H.G. Wells'));
+        $this->assertEquals(ucfirst('h.g. wells'), mb_ucfirst('h.g. wells'));
+        $this->assertEquals(ucfirst('H.G. WELLS'), mb_ucfirst('H.G. WELLS'));
     }
 
     function test_mb_strrev()
     {
         $this->assertEquals('öäå', mb_strrev('åäö'));
         $this->assertEquals('öäÅ', mb_strrev('Åäö'));
+
+        $this->assertEquals(strrev('bobby'), mb_strrev('bobby'));
     }
 
     function test_mb_str_pad()
     {
         $this->assertEquals('a   ', mb_str_pad('a', 4));
         $this->assertEquals('ö   ', mb_str_pad('ö', 4));
+
+        $this->assertEquals(str_pad('a', 4), mb_str_pad('a', 4));
     }
 
     function test_mb_count_chars()
     {
         $this->assertEquals(array('ö' => 1, 'b' => 2), mb_count_chars('böb', 1));
         $this->assertEquals('bö', mb_count_chars('böb', 3));
+        $this->assertEquals(count_chars('bobby', 3), count_chars('bobby', 3));
     }
 
     /**
@@ -56,4 +52,13 @@ class HelpersTest extends PHPUnit_Framework_TestCase
     {
         mb_count_chars('böb', 2);
     }
+
+    function test_mb_str_split()
+    {
+        $this->assertEquals(array('b', 'ö', 'b'), mb_str_split('böb'));
+
+        $this->assertEquals(str_split('bobby'), mb_str_split('bobby'));
+        $this->assertEquals(str_split(''), mb_str_split(''));
+    }
+
 }
