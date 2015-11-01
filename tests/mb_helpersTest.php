@@ -57,6 +57,12 @@ class HelpersTest extends PHPUnit_Framework_TestCase
     {
         $this->assertEquals(array('b', 'ö', 'b'), mb_str_split('böb'));
 
+        $this->assertEquals(array('bö', 'b'), mb_str_split('böb', 2));
+
+        for ($i = 1; $i < 10; $i++) {
+            $this->assertEquals(str_split('bob', $i), mb_str_split('bob', $i));
+        }
+
         $this->assertEquals(str_split('bobby'), mb_str_split('bobby'));
         $this->assertEquals(str_split(''), mb_str_split(''));
     }
