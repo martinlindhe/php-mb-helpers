@@ -122,7 +122,7 @@ if (!function_exists('mb_str_split')) {
      */
     function mb_str_split($string, $split_length = 1, $encoding = 'UTF-8')
     {
-        if ($split_length == 0) {
+        if ($split_length <= 0) {
             throw new \Exception('The length of each segment must be greater than zero');
         }
 
