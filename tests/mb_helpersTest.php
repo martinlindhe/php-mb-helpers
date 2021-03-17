@@ -65,6 +65,17 @@ class HelpersTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(str_split('bobby'), mb_str_split('bobby'));
         $this->assertEquals(str_split(''), mb_str_split(''));
+
+        foreach(array(0,-1) as $length) {
+          $exception_thrown = false;
+          try {
+             mb_str_split('foo', $length);
+          } catch (Exception $e) {
+             $exception_thrown = true;
+             $this->assertEquals('The length of each segment must be greater than zero', $e->getMessage());
+          }
+          $this->assertTrue($exception_thrown);
+        }
     }
 
 }
